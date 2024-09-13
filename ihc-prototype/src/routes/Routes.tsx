@@ -7,6 +7,7 @@ import { User } from "@/page/User";
 import Login from "@/page/Login";
 import Register from "@/page/Register";
 import { App } from "@/App";
+import ProtectedRoutes from "./protectedRoutes";
 
 
 export const router = createBrowserRouter([
@@ -20,15 +21,18 @@ export const router = createBrowserRouter([
         },
         {
           path: "product-bag",
-          element: <ProductsBag/>,
+          element: <ProtectedRoutes/>,
+          children:[{path:"",element:<ProductsBag/>}]
         },
         {
           path: "register-product",
-          element: <RegisterProducts/>,
+          element: <ProtectedRoutes/>,
+          children:[{path:"", element:<RegisterProducts/>}]
         },
         {
           path: "user",
-          element: <User/>,
+          element: <ProtectedRoutes/>,
+          children:[{path:"",element:<User/>}]
         },
        
       ],
