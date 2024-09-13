@@ -15,7 +15,7 @@ const Navigation = () => {
     await auth.signOut();
   };
   return (
-    <main className="flex flex-col h-screen border border-cor-9F9F9F">
+    <main className="flex flex-col h-full border border-cor-9F9F9F">
       <div>
         <div className="flex gap-3 items-center p-3 ">
         <CiUser className="text-2xl text-cor-9F9F9F" />
