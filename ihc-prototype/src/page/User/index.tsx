@@ -1,7 +1,7 @@
-export function ProductsBag() {
+export function User() {
   return (
     <main>
-      
+      perfil
     </main>
   );
 }

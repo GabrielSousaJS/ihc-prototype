@@ -1,6 +1,10 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+
+
+  
  
 @layer base {
   :root {
@@ -19,7 +23,7 @@
     --secondary: 210 40% 96.1%;
     --secondary-foreground: 222.2 47.4% 11.2%;
  
-    --muted: 210 40% 96.1%;
+    --muted: 210 40% 96.1%; 
     --muted-foreground: 215.4 16.3% 46.9%;
  
     --accent: 210 40% 96.1%;
@@ -74,3 +78,14 @@
     @apply bg-background text-foreground;
   }
 }
+
+.input{
+  @apply outline-none border border-cor-9F9F9F rounded-lg py-4 font-Poppins font-normal text-base text-cor-9F9F9F p-2
+  }
+  
+  .label{
+   @apply font-Poppins font-medium text-base text-black
+  }
+  .navigation{
+    @apply  flex items-center gap-2 font-Poppins text-start text-base font-semibold
+  }
