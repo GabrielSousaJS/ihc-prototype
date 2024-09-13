@@ -87,5 +87,5 @@
    @apply font-Poppins font-medium text-base text-black
   }
   .navigation{
-    @apply  flex items-center gap-2 font-Poppins text-start text-base font-semibold
+    @apply  flex items-start  p-1 gap-2 font-Poppins text-start text-base font-semibold
   }
