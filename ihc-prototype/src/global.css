@@ -80,7 +80,7 @@
 }
 
 .label {
-  @apply font-Poppins font-medium text-base text-black;
+  @apply font-Poppins font-semibold text-sm text-black;
 }
 .navigation {
   @apply flex items-start  p-1 gap-2 font-Poppins text-start text-base font-semibold;
