@@ -75,7 +75,7 @@ export function ProductForm() {
             />
 
             {/* Botão customizado */}
-            <div className="flex items-center gap-4">
+            <div className="flex items-center">
               <button
                 type="button"
                 className="w-full py-3 px-20 bg-blue-900 rounded-lg font-Poppins font-normal text-base text-white  cursor-pointer"
