@@ -14,7 +14,7 @@ export const RegisterForm = () =>{
         formState: { errors },
       } = useForm<IRegister>();
     
-      const onSubmit: SubmitHandler<IRegister> = (data, e) => {
+      const onSubmit: SubmitHandler<IRegister> = (data: any, e: any) => {
         e?.preventDefault();
         handleRegister(data);
         if(auth){
