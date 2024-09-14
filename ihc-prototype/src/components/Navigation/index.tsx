@@ -18,17 +18,22 @@ const Navigation = () => {
     <main className="flex flex-col h-full border border-cor-9F9F9F">
       <div>
         <div className="flex gap-3 items-center p-3 ">
-        <CiUser className="text-2xl text-cor-9F9F9F" />
-          {user?(
+          {user?.photoURL ? (
+            <img src={user.photoURL} className="rounded-2xl w-10" />
+          ) : (
+            <CiUser className="text-2xl text-cor-9F9F9F" />
+          )}
+
+          {user ? (
             <div>
-            <p className="font-Poppins font-bold text-black ">
-              {user?.displayName}
-            </p>
-            <p className="font-Poppins font-normal text-sm text-cor-9F9F9F">
-              {user?.email}
-            </p>
-          </div>
-          ):(
+              <p className="font-Poppins font-bold text-black ">
+                {user?.displayName}
+              </p>
+              <p className="font-Poppins font-normal text-sm text-cor-9F9F9F">
+                {user?.email}
+              </p>
+            </div>
+          ) : (
             <p className="font-Poppins font-bold text-black">Bem Vindo</p>
           )}
         </div>
