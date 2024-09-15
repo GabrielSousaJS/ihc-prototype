@@ -8,7 +8,7 @@ export function App() {
   return (
     <>
     <ToastContainer />
-    <main className="grid grid-cols-[250px_auto]">
+    <main className="md:grid md:grid-cols-[250px_auto]">
        <Navigation />
        <Outlet/>
     </main>

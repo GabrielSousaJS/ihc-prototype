@@ -18,6 +18,8 @@ const Cart = ({
   onIncrease,
   onDecrease,
 }: cartType) => {
+ 
+
   return (
     <div className="flex w-ful gap-5 p-5  items-center border-b-2 ">
       <div className="w-[105px] h-[105px] col-span-1">
