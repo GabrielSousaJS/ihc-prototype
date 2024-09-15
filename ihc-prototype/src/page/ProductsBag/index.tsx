@@ -3,7 +3,7 @@ import { ICart } from "@/service/api/Model/Products.model";
 import { DeleteCart, GetCart, LimparCart } from "@/service/cart/cart";
 import { useCallback, useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
-
+import { toast } from 'react-toastify';
 export function ProductsBag() {
 
   const [itensCarrinho, setItensCarrinho] = useState<ICart[]>([]);
@@ -59,8 +59,10 @@ export function ProductsBag() {
     setItensCarrinho(updatedItems);
     localStorage.setItem("carrinho", JSON.stringify(updatedItems));
   };
+  const notify = () => toast.success("Comprado com sucesso!");
 const handleClick = () =>{
   LimparCart()
+  notify()
   navigate("/")
 
 }

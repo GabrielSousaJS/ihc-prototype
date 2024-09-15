@@ -6,6 +6,7 @@ import { getStorage, ref, uploadBytes, getDownloadURL } from "firebase/storage";
 import { CiUser } from "react-icons/ci";
 import { auth } from "@/service/firebase/firebase.config";
 import { useNavigate } from "react-router-dom";
+import { toast } from 'react-toastify';
 
 const PerfilForm = () => {
   const user = auth.currentUser;
@@ -41,7 +42,7 @@ const PerfilForm = () => {
     e?.preventDefault();
     handleRegister(data);
   };
-
+  const notify = () => toast.success("Perfil atualizado!");
   const handleRegister = async (data: IPerfil) => {
     try {
       if (!user) throw new Error("Usuário não autenticado");
@@ -58,6 +59,7 @@ const PerfilForm = () => {
     } catch (error) {
       console.error("Erro ao atualizar o perfil:", error);
     }
+    notify()
     navigate("/")
   };
 

@@ -4,6 +4,7 @@ import { useState } from "react";
 import { SubmitHandler, useForm } from "react-hook-form";
 import { useNavigate } from "react-router-dom";
 import {products} from "@/json/db.json"
+import { toast } from 'react-toastify';
 
 export function ProductForm() {
   const {
@@ -26,7 +27,7 @@ export function ProductForm() {
     const fileInput = document.getElementById("fileInput");
     fileInput?.click();
   };
-
+  const notify = () => toast.success("Produto registrado");
   const onSubmit: SubmitHandler<IProductsForm> = (data: IProductsForm, e: any) => {
     e?.preventDefault();
     const prod:IProducts = {
@@ -52,6 +53,7 @@ export function ProductForm() {
        title:data.title  
     }
     products.push(prod)
+    notify()
     navigate("/")
   }
 
