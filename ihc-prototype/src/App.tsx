@@ -4,7 +4,7 @@ import Navigation from "./components/Navigation";
 
 export function App() {
   return (
-    <main className="grid grid-cols-[250px_auto]">
+    <main className="grid md:grid-cols-[250px_auto]">
        <Navigation />
        <Outlet/>
     </main>
