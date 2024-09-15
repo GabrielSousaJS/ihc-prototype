@@ -5,11 +5,13 @@ import { SubmitHandler, useForm } from "react-hook-form";
 import { getStorage, ref, uploadBytes, getDownloadURL } from "firebase/storage";
 import { CiUser } from "react-icons/ci";
 import { auth } from "@/service/firebase/firebase.config";
+import { useNavigate } from "react-router-dom";
 
 const PerfilForm = () => {
   const user = auth.currentUser;
   const displayName = user?.displayName;
   const [firstName, lastName] = displayName!.split(" ");
+  const navigate = useNavigate();
 
   const {
     register,
@@ -56,6 +58,7 @@ const PerfilForm = () => {
     } catch (error) {
       console.error("Erro ao atualizar o perfil:", error);
     }
+    navigate("/")
   };
 
   return (

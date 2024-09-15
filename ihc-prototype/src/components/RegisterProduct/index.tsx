@@ -1,6 +1,9 @@
 import { IProductsForm } from "@/service/api/Model/Product-Form.model";
+import { IProducts } from "@/service/api/Model/Products.model";
 import { useState } from "react";
 import { SubmitHandler, useForm } from "react-hook-form";
+import { useNavigate } from "react-router-dom";
+import {products} from "@/json/db.json"
 
 export function ProductForm() {
   const {
@@ -8,6 +11,7 @@ export function ProductForm() {
     handleSubmit,
     formState: { errors },
   } = useForm<IProductsForm>();
+  const navigate = useNavigate()
 
   const [preview, setPreview] = useState<string>("");
 
@@ -20,12 +24,40 @@ export function ProductForm() {
 
   const handleButtonClick = () => {
     const fileInput = document.getElementById("fileInput");
-    fileInput?.click(); // Simula um clique no input escondido
+    fileInput?.click();
   };
+
+  const onSubmit: SubmitHandler<IProductsForm> = (data: IProductsForm, e: any) => {
+    e?.preventDefault();
+    const prod:IProducts = {
+      id:0,
+      colors:[],
+      category:"",
+      description:{
+        long:"",
+        short:data.description
+      },
+      discountPercentage:0,
+      images:{
+        mainImage:preview,
+        gallery:[]
+      },
+      new:true,
+      normalPrice:data.price,
+      rating:0,
+      salePrice:0,
+       sizes:[],
+       sku:"000988",
+       tags:[],
+       title:data.title  
+    }
+    products.push(prod)
+    navigate("/")
+  }
 
   return (
     <main>
-      <form className="flex flex-col gap-8 w-[350px] md:w-[400px]  lg:w-[1200px] shadow-2xl shadow-cor-shadow py-10 px-5 md:px-20 rounded-xl">
+      <form onSubmit={handleSubmit(onSubmit)} className="flex flex-col gap-8 w-[350px] md:w-[400px]  lg:w-[1200px] shadow-2xl shadow-cor-shadow py-10 px-5 md:px-20 rounded-xl">
         <div className="lg:flex gap-5">
           <label className="label flex flex-col gap-2 mb-5 lg:mb-0 flex-auto">
             Título do Produto
