@@ -10,7 +10,7 @@ export function ProductForm() {
   const {
     register,
     handleSubmit,
-    formState: { errors },
+    
   } = useForm<IProductsForm>();
   const navigate = useNavigate()
 
