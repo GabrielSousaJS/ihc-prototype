@@ -1,7 +1,8 @@
+import { GlobalContext } from "@/context/Search.context"
 import {products} from "@/json/db.json"
 import { ICart, IProducts } from "@/service/api/Model/Products.model"
 import { AddCart } from "@/service/cart/cart"
-import { useState } from "react"
+import { useContext, useState } from "react"
 
 type cardProps ={
     products:IProducts
@@ -41,10 +42,10 @@ const ProductsCard = () => {
   const loadMoreProducts = () => {
     setVisibleProducts((prev) => prev + 10);
   };
-
+const productsContext = useContext(GlobalContext)
   return (
-    <main className="max-w-screen-xl mx-auto my-10 flex flex-wrap gap-10">
-        {products.slice(0,visibleProducts).map((prod) =>(
+    <main className="max-w-screen-xl mx-auto my-10 flex flex-wrap justify-center gap-10">
+        {productsContext?.filteredProducts.slice(0,visibleProducts).map((prod) =>(
             <Card key={prod.id} products={prod}/>
         ))}
 

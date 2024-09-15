@@ -1,15 +1,25 @@
-import { CiSearch } from "react-icons/ci";
+import { GlobalContext } from "@/context/Search.context";
+import { useContext } from "react";
 const Search = () => {
+  const searchProd = useContext(GlobalContext)
+
+  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) =>{
+   e.preventDefault() 
+  }
+
+const handleChange= (e:React.ChangeEvent<HTMLInputElement>) =>{
+  searchProd?.getSearch(e.target.value) 
+}
+
   return (
-    <form>
-      <label className="border bg-[#f7f1f1] flex gap-3 p-2 rounded-lg w-[500px]">
-        <button>
-          <CiSearch />
-        </button>
+    <form onSubmit={handleSubmit}>
+      <label className="">
+        
         <input
           type="text"
-          className="outline-none bg-transparent font-Poppins text-cor-9F9F9F"
-          placeholder="Search products..."
+          className="outline-none border bg-[#f7f1f1] flex gap-3 p-2 rounded-lg  lg:w-[500px] font-Poppins text-cor-9F9F9F "
+          placeholder="Busque o seu produto..."
+          onChange={handleChange}
         />
       </label>
     </form>

@@ -8,6 +8,7 @@ import Login from "@/page/Login";
 import Register from "@/page/Register";
 import { App } from "@/App";
 import ProtectedRoutes from "./protectedRoutes";
+import { GlobalStorage } from "@/context/Search.context";
 
 
 export const router = createBrowserRouter([
@@ -17,7 +18,7 @@ export const router = createBrowserRouter([
       children: [
         {
           path: "",
-          element: <ProductsFeed />,
+          element: <GlobalStorage><ProductsFeed /></GlobalStorage>,
         },
         {
           path: "product-bag",

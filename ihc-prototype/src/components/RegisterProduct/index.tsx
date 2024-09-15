@@ -61,7 +61,6 @@ export function ProductForm() {
         </label>
         <div className="flex flex-col gap-4">
           <label className="label flex flex-col gap-2">
-            Anexar imagem
             {/* Input escondido */}
             <input
               type="file"
