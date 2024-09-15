@@ -9,7 +9,6 @@ type cartType = {
   quantidade: number;
   onIncrease: (id: number) => void;
   onDecrease: (id: number) => void;
-  totalValue:number;
 };
 
 const Cart = ({
@@ -18,7 +17,6 @@ const Cart = ({
   quantidade,
   onIncrease,
   onDecrease,
-  totalValue,
 }: cartType) => {
   return (
     <div className="flex w-ful gap-5 p-5  items-center border-b-2 ">
@@ -34,7 +32,7 @@ const Cart = ({
           {cart.title}
         </h1>
         <p className="font-Poppins font-normal text-base text-cor-9F9F9F ">
-          Rp. {totalValue}
+          R$. {cart.normalPrice}
         </p>
         <div className="flex border border-cor-9F9F9F px-1 w-[120px] py-1 h-12 rounded-xl gap-4 items-cente ">
           <button
