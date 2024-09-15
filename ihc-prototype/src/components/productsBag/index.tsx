@@ -21,7 +21,7 @@ const Cart = ({
   totalValue,
 }: cartType) => {
   return (
-    <div className="flex w-ful gap-5 p-5  items-center border-2 rounded-lg">
+    <div className="flex w-ful gap-5 p-5  items-center border-b-2 ">
       <div className="w-[105px] h-[105px] col-span-1">
         <img
           src={cart.images.mainImage}
