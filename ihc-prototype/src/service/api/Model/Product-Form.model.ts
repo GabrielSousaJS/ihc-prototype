@@ -5,3 +5,4 @@ export interface IProductsForm {
   price: number,
   imgUrl: string,
 }
+

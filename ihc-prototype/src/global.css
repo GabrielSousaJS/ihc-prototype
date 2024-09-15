@@ -86,7 +86,7 @@
   @apply flex items-start  p-1 gap-2 font-Poppins text-start text-base font-semibold;
 }
 ::-webkit-scrollbar {
-  width: 10px;
+  width: 0;
 }
 .cart-scrool {
   @apply overflow-y-auto h-28;

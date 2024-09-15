@@ -28,3 +28,7 @@ export interface IProducts {
     mainImage: string;
     gallery: string[];
   }
+
+  export interface ICart extends IProducts {
+    quantity:number
+  }
